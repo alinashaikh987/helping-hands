@@ -1,0 +1,18 @@
+# Sensitive configuration
+config/db.php
+includes/db.php
+
+# Local environment files
+.env
+.env.*
+
+# Python / editor / operating system files
+__pycache__/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary and log files
+*.log
+*.tmp

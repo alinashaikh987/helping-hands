@@ -1,0 +1,79 @@
+/* Admin panel styles */
+.admin-wrap { display: flex; min-height: 100vh; }
+
+.admin-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  padding: 1.8rem 1.1rem;
+  background: linear-gradient(180deg, #0f3d14, #0a2a0e);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 4px 0 18px rgba(0, 0, 0, .12);
+}
+.admin-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 .5rem 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+.admin-brand::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #f9a825;
+  margin-top: .6rem;
+}
+.admin-sidebar .nav-link {
+  color: rgba(255, 255, 255, .78);
+  font-weight: 500;
+  border-radius: 10px;
+  padding: .65rem 1rem;
+  margin-bottom: .25rem;
+  transition: background .15s, color .15s;
+}
+.admin-sidebar .nav-link:hover { background: rgba(255, 255, 255, .1); color: #fff; }
+.admin-sidebar .nav-link.active {
+  background: #2e7d32;
+  color: #fff;
+  box-shadow: inset 4px 0 0 #f9a825;
+}
+.admin-sidebar .btn-outline-light { border-radius: 50px; }
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  padding: 2.2rem 2.5rem;
+  background: #f1f6f1;
+}
+.admin-main .section-title { font-size: 1.8rem; }
+
+.admin-main .table thead th {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5b6b60;
+  border-bottom: 2px solid #e8f5e9;
+}
+.admin-main .table td { padding-top: .8rem; padding-bottom: .8rem; }
+
+@media (max-width: 768px) {
+  .admin-wrap { flex-direction: column; }
+  .admin-sidebar { width: 100%; height: auto; position: static; }
+  .admin-main { padding: 1.4rem 1rem; }
+}
+
+/* ---------- Print view ---------- */
+@media print {
+  .admin-sidebar, .no-print { display: none !important; }
+  .admin-wrap { display: block; }
+  .admin-main { padding: 0; background: #fff; }
+  .admin-main .d-flex.justify-content-between { display: none !important; }
+  .card { box-shadow: none !important; border: 1px solid #ccc; }
+  body { background: #fff; }
+}
